@@ -29,25 +29,16 @@ function Header(props) {
                     </div>
                     <nav id="navbar" className="navbar order-last order-lg-0">
                         <ul>
-                            {/* <a className="nav-link scrollto active" href="index.html">Home</a>*/}
                             <li><NavLink className="nav-link scrollto active" exact to={'/'}>Home</NavLink></li>
-                            {/* <a className="nav-link scrollto" href="./pages/departments.html">Departments</a>*/}
                             <li><NavLink className="nav-link scrollto" exact to={'/department'}>Department</NavLink></li>
-                            {/* <a className="nav-link scrollto" href="./pages/doctors.html">Doctors</a>*/}
                             <li><NavLink className="nav-link scrollto" exact to={'/doctor'}>Doctors</NavLink></li>
-                            {/* <a className="nav-link scrollto " href="./pages/about.html">About</a>*/}
                             <li><NavLink className="nav-link scrollto" exact to={'/about'}>About</NavLink></li>
-                            {/* <a className="nav-link scrollto" href="./pages/contact.html">Contact</a>*/}
                             <li><NavLink className="nav-link scrollto" exact to={'/contact'}>Contact</NavLink></li>
                             <li><NavLink className="nav-link scrollto" exact to={'/medicine'}>Medicine</NavLink></li>
                         </ul>
                         <i className="bi bi-list mobile-nav-toggle" />
                     </nav>
-                    {/* <a href="./pages/appointment.html" className="appointment-btn scrollto"><span className="d-none d-md-inline">Make an</span>Appointment</a> */}
                     <NavLink to={'/appoitment'} className="appointment-btn scrollto"><span className="d-none d-md-inline">Make an</span>Appointment</NavLink>
-                    {/* <a href="#" className="appointment-btn scrollto">
-                        <span className="d-none d-md-inline">Login/ Signup</span>
-                    </a> */}
                     <NavLink to={'/login'}  className="appointment-btn scrollto"><span className="d-none d-md-inline">Login/ Signup</span></NavLink>
                 </div>
             </header>

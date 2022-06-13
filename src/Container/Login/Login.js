@@ -44,6 +44,7 @@ function Login(props) {
         onSubmit: values => {
             if (UseType === 'Login') {
                 console.log('Login Successfully');
+                sessionStorage.setItem("user", '12345');
             }
             else if (UseType === 'Signup') {
                 console.log('Signup Successfully');
