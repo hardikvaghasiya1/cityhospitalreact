@@ -1,14 +1,14 @@
 import React from 'react';
 import { Redirect, Route } from 'react-router-dom';
-import { DoneLogin } from '../utilis';
+import { isLogin } from '../utilis';
 
-function PublicRoute({ component: Component, restricted=false, ...rest}) {
+function PublicRoute({component:Component, restricted= false, ...rest }) {
     return (
         <Route {...rest} render={props => (
-            DoneLogin() && restricted ?
-                <Redirect to ={"/"} />
+            isLogin() && restricted?
+                <Redirect to={"/"} />
                 :
-                <Component {...props}/>
+                <Component{...props}/>
         )}
         />
     );

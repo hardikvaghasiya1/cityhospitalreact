@@ -43,6 +43,7 @@ function Medicine(props) {
             status: false
           }
         ];
+        console.log(data)
     return (
         <div>
             {

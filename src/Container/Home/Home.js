@@ -107,7 +107,7 @@ function Home(props) {
                             <div className="swiper-slide">
                                 <div className="testimonial-wrap">
                                     <div className="testimonial-item">
-                                        <img src="assets/img/testimonials/testimonials-1.jpg" className="testimonial-img" alt />
+                                        <img src="assets/img/testimonials/testimonials-1.jpg" className="testimonial-img" alt=''/>
                                         <h3>Jacob Wilsson</h3>
                                         <h4>Writer</h4>
                                         <p>
@@ -124,7 +124,7 @@ function Home(props) {
                             <div className="swiper-slide">
                                 <div className="testimonial-wrap">
                                     <div className="testimonial-item">
-                                        <img src="assets/img/testimonials/testimonials-2.jpg" className="testimonial-img" alt />
+                                        <img src="assets/img/testimonials/testimonials-2.jpg" className="testimonial-img" alt=''/>
                                         <h3>Ava Smith</h3>
                                         <h4>Artist</h4>
                                         <p>
@@ -140,7 +140,7 @@ function Home(props) {
                             <div className="swiper-slide">
                                 <div className="testimonial-wrap">
                                     <div className="testimonial-item">
-                                        <img src="assets/img/testimonials/testimonials-3.jpg" className="testimonial-img" alt />
+                                        <img src="assets/img/testimonials/testimonials-3.jpg" className="testimonial-img" alt=''/>
                                         <h3>Abigail Martin</h3>
                                         <h4>Teacher</h4>
                                         <p>
@@ -157,7 +157,7 @@ function Home(props) {
                             <div className="swiper-slide">
                                 <div className="testimonial-wrap">
                                     <div className="testimonial-item">
-                                        <img src="assets/img/testimonials/testimonials-4.jpg" className="testimonial-img" alt />
+                                        <img src="assets/img/testimonials/testimonials-4.jpg" className="testimonial-img" alt=''/>
                                         <h3>Alexander Tremblay</h3>
                                         <h4>Designer</h4>
                                         <p>
@@ -173,7 +173,7 @@ function Home(props) {
                             <div className="swiper-slide">
                                 <div className="testimonial-wrap">
                                     <div className="testimonial-item">
-                                        <img src="assets/img/testimonials/testimonials-5.jpg" className="testimonial-img" alt />
+                                        <img src="assets/img/testimonials/testimonials-5.jpg" className="testimonial-img" alt=''/>
                                         <h3>Jayden Brown</h3>
                                         <h4>Entrepreneur</h4>
                                         <p>
@@ -204,56 +204,56 @@ function Home(props) {
                         <div className="col-lg-3 col-md-4">
                             <div className="gallery-item">
                                 <a href="assets/img/gallery/gallery-1.jpg" className="galelry-lightbox">
-                                    <img src="assets/img/gallery/gallery-1.jpg" alt className="img-fluid" />
+                                    <img src="assets/img/gallery/gallery-1.jpg" className="img-fluid" alt=''/>
                                 </a>
                             </div>
                         </div>
                         <div className="col-lg-3 col-md-4">
                             <div className="gallery-item">
                                 <a href="assets/img/gallery/gallery-2.jpg" className="galelry-lightbox">
-                                    <img src="assets/img/gallery/gallery-2.jpg" alt className="img-fluid" />
+                                    <img src="assets/img/gallery/gallery-2.jpg" className="img-fluid" alt=''/>
                                 </a>
                             </div>
                         </div>
                         <div className="col-lg-3 col-md-4">
                             <div className="gallery-item">
                                 <a href="assets/img/gallery/gallery-3.jpg" className="galelry-lightbox">
-                                    <img src="assets/img/gallery/gallery-3.jpg" alt className="img-fluid" />
+                                    <img src="assets/img/gallery/gallery-3.jpg" className="img-fluid" alt=''/>
                                 </a>
                             </div>
                         </div>
                         <div className="col-lg-3 col-md-4">
                             <div className="gallery-item">
                                 <a href="assets/img/gallery/gallery-4.jpg" className="galelry-lightbox">
-                                    <img src="assets/img/gallery/gallery-4.jpg" alt className="img-fluid" />
+                                    <img src="assets/img/gallery/gallery-4.jpg" className="img-fluid" alt=''/>
                                 </a>
                             </div>
                         </div>
                         <div className="col-lg-3 col-md-4">
                             <div className="gallery-item">
                                 <a href="assets/img/gallery/gallery-5.jpg" className="galelry-lightbox">
-                                    <img src="assets/img/gallery/gallery-5.jpg" alt className="img-fluid" />
+                                    <img src="assets/img/gallery/gallery-5.jpg" className="img-fluid" alt=''/>
                                 </a>
                             </div>
                         </div>
                         <div className="col-lg-3 col-md-4">
                             <div className="gallery-item">
                                 <a href="assets/img/gallery/gallery-6.jpg" className="galelry-lightbox">
-                                    <img src="assets/img/gallery/gallery-6.jpg" alt className="img-fluid" />
+                                    <img src="assets/img/gallery/gallery-6.jpg" className="img-fluid" alt=''/>
                                 </a>
                             </div>
                         </div>
                         <div className="col-lg-3 col-md-4">
                             <div className="gallery-item">
                                 <a href="assets/img/gallery/gallery-7.jpg" className="galelry-lightbox">
-                                    <img src="assets/img/gallery/gallery-7.jpg" alt className="img-fluid" />
+                                    <img src="assets/img/gallery/gallery-7.jpg" className="img-fluid" alt=''/>
                                 </a>
                             </div>
                         </div>
                         <div className="col-lg-3 col-md-4">
                             <div className="gallery-item">
                                 <a href="assets/img/gallery/gallery-8.jpg" className="galelry-lightbox">
-                                    <img src="assets/img/gallery/gallery-8.jpg" alt className="img-fluid" />
+                                    <img src="assets/img/gallery/gallery-8.jpg" className="img-fluid" alt=''/>
                                 </a>
                             </div>
                         </div>

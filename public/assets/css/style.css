@@ -1058,6 +1058,7 @@ section {
   animation: animate-loading 1s linear infinite;
 }
 
+
 .abouttop {
   margin-top:40px ;
 }
@@ -1092,6 +1093,9 @@ section {
 
 .appointment .php-email-form button[type="submit"]:hover {
   background: #1c84e3;
+}
+.apt-btn{
+  border-bottom: 2px solid #000000;
 }
 
 /*--------------------------------------------------------------
@@ -1753,7 +1757,7 @@ section {
   height: 138px;
 }
 
-.appointment button{
+.appointment-btn{
   background: #FF6337;
     border: 0;
     padding: 10px 35px;

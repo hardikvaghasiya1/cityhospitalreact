@@ -41,7 +41,7 @@ function Department(props) {
                                                 tellus. Proin urna augue, posuere ut pellentesque quis, cursus ac neque.</p>
                                         </div>
                                         <div className="col-lg-4 text-center order-1 order-lg-2">
-                                            <img src="../assets/img/departments-1.jpg" alt className="img-fluid" />
+                                            <img src="../assets/img/departments-1.jpg" className="img-fluid" alt=''/>
                                         </div>
                                     </div>
                                 </div>
@@ -56,7 +56,7 @@ function Department(props) {
                                                 tellus. Proin urna augue, posuere ut pellentesque quis, cursus ac neque.</p>
                                         </div>
                                         <div className="col-lg-4 text-center order-1 order-lg-2">
-                                            <img src="../assets/img/departments-2.jpg" alt className="img-fluid" />
+                                            <img src="../assets/img/departments-2.jpg" className="img-fluid" alt=''/>
                                         </div>
                                     </div>
                                 </div>
@@ -71,7 +71,7 @@ function Department(props) {
                                                 tellus. Proin urna augue, posuere ut pellentesque quis, cursus ac neque.</p>
                                         </div>
                                         <div className="col-lg-4 text-center order-1 order-lg-2">
-                                            <img src="../assets/img/departments-3.jpg" alt className="img-fluid" />
+                                            <img src="../assets/img/departments-3.jpg" className="img-fluid" alt=''/>
                                         </div>
                                     </div>
                                 </div>
@@ -86,7 +86,7 @@ function Department(props) {
                                                 tellus. Proin urna augue, posuere ut pellentesque quis, cursus ac neque.</p>
                                         </div>
                                         <div className="col-lg-4 text-center order-1 order-lg-2">
-                                            <img src="../assets/img/departments-4.jpg" alt className="img-fluid" />
+                                            <img src="../assets/img/departments-4.jpg" className="img-fluid" alt=''/>
                                         </div>
                                     </div>
                                 </div>
@@ -101,7 +101,7 @@ function Department(props) {
                                                 tellus. Proin urna augue, posuere ut pellentesque quis, cursus ac neque.</p>
                                         </div>
                                         <div className="col-lg-4 text-center order-1 order-lg-2">
-                                            <img src="../assets/img/departments-5.jpg" alt className="img-fluid" />
+                                            <img src="../assets/img/departments-5.jpg" className="img-fluid" alt=''/>
                                         </div>
                                     </div>
                                 </div>

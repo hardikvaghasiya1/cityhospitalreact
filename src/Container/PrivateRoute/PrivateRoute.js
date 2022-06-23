@@ -1,16 +1,16 @@
 import React from 'react';
 import { Redirect, Route } from 'react-router-dom';
-import { DoneLogin } from '../utilis';
+import { isLogin } from '../utilis';
 
 function PrivateRoute({component:Component, ...rest}) {
     return (
-        <Route{...rest} render={props=>(
-            DoneLogin()?
-            <Component {...props} />
+        <Route {...rest} render={props => (
+            isLogin() ?
+            <Component{...props}/>
             :
-            <Redirect to={"/login"} />
-
-        )}
+            <Redirect to={"/login"}/>
+        )} 
+        
         />
     );
 }
