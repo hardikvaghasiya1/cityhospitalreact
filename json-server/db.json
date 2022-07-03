@@ -1,0 +1,26 @@
+{
+  "medicine": [
+    {
+      "id": 1,
+      "name": "abcd",
+      "price": 110,
+      "quantity": 44
+    },
+    {
+      "id": 2,
+      "name": "efg",
+      "price": 110,
+      "quantity": 44
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

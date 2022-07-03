@@ -34,6 +34,7 @@ function Header(props) {
                             <li><NavLink className="nav-link scrollto" exact to={'/doctor'}>Doctors</NavLink></li>
                             <li><NavLink className="nav-link scrollto" exact to={'/about'}>About</NavLink></li>
                             <li><NavLink className="nav-link scrollto" exact to={'/contact'}>Contact</NavLink></li>
+                            <li><NavLink className="nav-link scrollto" exact to={'/counter'}>Counter</NavLink></li>
                             <li><NavLink className="nav-link scrollto" exact to={'/medicine'}>Medicine</NavLink></li>
                         </ul>
                         <i className="bi bi-list mobile-nav-toggle" />
