@@ -12,6 +12,8 @@ import Paper from '@mui/material/Paper';
 import IconButton from '@mui/material/IconButton';
 import DeleteIcon from '@mui/icons-material/Delete';
 import EditIcon from '@mui/icons-material/Edit';
+import { useDispatch } from 'react-redux';
+import { get_medicine_data } from '../../redux/Action/medicine.action';
 
 
 
@@ -23,8 +25,11 @@ function Listappoitment(props) {
         const localdata = JSON.parse(localStorage.getItem('appoitment'));
         setData(localdata);
     }
+    const dispatch = useDispatch();
+
     useEffect(
         () => {
+            dispatch(get_medicine_data());
             showData();
         }, []
     )

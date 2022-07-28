@@ -1765,3 +1765,24 @@ section {
     transition: 0.4s;
     border-radius: 50px;
 }
+.light{
+  background-color: #ffffff!important;
+  color: #000000 !important;
+}
+.dark{
+  background-color: #000000!important;
+  color: #ffffff !important;
+}
+
+.change-icon{
+  font-size: 18px;
+  background: #FF6337;
+  color: #fff;
+  line-height: 1;
+  padding: 5px 6px;
+  margin-left: 9px;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 15px;
+  border: none;
+}

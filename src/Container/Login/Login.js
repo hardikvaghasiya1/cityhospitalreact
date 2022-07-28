@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import * as yup from 'yup';
 import { Form, Formik, useFormik } from 'formik';
+import { signupaction } from '../../redux/Action/auth.action';
 
 function Login(props) {
     let [UseType, setUseType] = useState("Login");
@@ -48,6 +49,7 @@ function Login(props) {
             }
             else if (UseType === 'Signup') {
                 console.log('Signup Successfully');
+                signupaction(values)
             }
             else if (UseType === 'ForgotPassword') {
                 console.log('Forgot Password Sucessfully');
