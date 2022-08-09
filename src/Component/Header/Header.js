@@ -1,10 +1,19 @@
 import React, { useContext } from 'react';
 import { NavLink } from 'react-router-dom';
 import ThemeContexts from '../../Context/ThemeContext';
+import Alert from '../AlertComp/Alert';
+import { useSelector } from 'react-redux';
+
 
 function Header(props) {    
     const theme = useContext(ThemeContexts)
     // console.log(theme)
+
+    const authuser = useSelector(state => state.signup)
+    console.log(authuser)
+
+
+
     return (
         <div className="main-header">
             <div id="topbar" className={`d-flex align-items-center fixed-top ${theme.theme}`}>
@@ -47,6 +56,7 @@ function Header(props) {
                     </nav>
                     <NavLink to={'/appoitment'} className="appointment-btn scrollto"><span className="d-none d-md-inline">Make an</span>Appointment</NavLink>
                     <NavLink to={'/login'}  className="appointment-btn scrollto"><span className="d-none d-md-inline">Login/ Signup</span></NavLink>
+                    <Alert/>
                 </div>
             </header>
         </div>

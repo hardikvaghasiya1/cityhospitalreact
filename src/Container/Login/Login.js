@@ -1,16 +1,20 @@
 import React, { useState } from 'react';
 import * as yup from 'yup';
 import { Form, Formik, useFormik } from 'formik';
-import { signupaction } from '../../redux/Action/auth.action';
+import { loginAction, signupaction } from '../../redux/Action/auth.action';
+import { useDispatch } from 'react-redux';
 
 function Login(props) {
+
+    const dispatch = useDispatch()
+
     let [UseType, setUseType] = useState("Login");
     let loginerror = {
         email: yup.string().email("Enter a valid Email").required("Email is reqired"),
         password: yup.string().min(6, 'Password length must be greater than 6 characters.').max(12, 'Password length must be less than 12 characters.').required("Password is Required")
     }
     let signuperror = {
-        name: yup.string().required('Name is Required'),
+        // name: yup.string().required('Name is Required'),
         email: yup.string().email("Enter a valid Email").required("Email is reqired"),
         password: yup.string().min(6, 'Password length must be greater than 6 characters.').max(12, 'Password length must be less than 12 characters.').required("Password is Required")
     }
@@ -28,7 +32,7 @@ function Login(props) {
     else if (UseType === 'Signup') {
         schema = yup.object().shape(signuperror);
         initial = {
-            name: '',
+            // name: '',
             email: '',
             password: ''
         }
@@ -39,22 +43,26 @@ function Login(props) {
             email: ''
         }
     }
+
     const formik = useFormik({
         initialValues: initial,
         validationSchema: schema,
         onSubmit: values => {
             if (UseType === 'Login') {
                 console.log('Login Successfully');
-                sessionStorage.setItem("user", '12345');
+                // sessionStorage.setItem("user", '12345');
+                dispatch(loginAction(values))
             }
-            else if (UseType === 'Signup') {
+            else if (UseType === 'Signup'){
                 console.log('Signup Successfully');
-                signupaction(values)
+                dispatch(signupaction(values));
+                formik.resetForm();
             }
             else if (UseType === 'ForgotPassword') {
                 console.log('Forgot Password Sucessfully');
             }
         },
+        
     });
     return (
         <main>
@@ -86,10 +94,10 @@ function Login(props) {
                             {
                                 UseType === 'Signup' ? (
                                     <div>
-                                        <div className="col-md-4 form-group">
+                                        {/* <div className="col-md-4 form-group">
                                             <input type="name" className="form-control" name="name" placeholder="Your Name" onChange={formik.handleChange} />
                                             {formik.errors.name ? <p className="text-danger small">{formik.errors.name}</p> : null}
-                                        </div>
+                                        </div> */}
                                         <div className="col-md-4 form-group mt-4">
                                             <input type="email" className="form-control" name="email" placeholder="Your Email" onChange={formik.handleChange} />
                                             {formik.errors.email ? <p className="text-danger small">{formik.errors.email}</p> : null}
@@ -155,7 +163,6 @@ function Login(props) {
                 </div>
             </section>
         </main>
-
     );
 }
 

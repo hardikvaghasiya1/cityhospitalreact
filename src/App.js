@@ -16,35 +16,37 @@ import PrivateRoute from './Container/PrivateRoute/PrivateRoute';
 import Listappoitment from './Container/Appoitment/Listappoitment';
 import { Provider } from 'react-redux'
 import Counter from './Container/Counter/Counter';
-import { configureStore } from './redux/Store';
+import { configureStore, store } from './redux/Store';
 import { ProviderTheme } from './Context/ThemeContext';
+import { SnackbarProvider } from 'notistack';
 
 function App() {
 
-  let store = configureStore()
+  // let store = configureStore()
 
 
   return (
-    <>  
-      
-      <ProviderTheme>
-        <Provider store={store}>
-        <Header />
-          <Switch>
-            <PublicRoute exact path={"/"} component={Home} />
-            <PublicRoute exact path={"/department"} component={Department} />
-            <PublicRoute exact path={"/doctor"} component={Doctor} />
-            <PublicRoute exact path={"/about"} component={About} />
-            <PrivateRoute exact path={"/contact"} component={Contact} />
-            <PrivateRoute exact path={"/appoitment"} component={Appoitment} />
-            <PrivateRoute exact path={"/listappoitment"} component={Listappoitment} />
-            <PublicRoute exact path={"/medicine"} component={Medicine} />
-            <PublicRoute exact path={"/counter"} component={Counter} />
-            <PublicRoute restricted={true} exact path={"/login"} component={Login} />
-          </Switch>
-        </Provider>
-      </ProviderTheme>
-      <Footer />
+    <>
+      <SnackbarProvider maxSnack={3}>
+        <ProviderTheme>
+          <Provider store={store}>
+            <Header />
+            <Switch>
+              <PublicRoute exact path={"/"} component={Home} />
+              <PublicRoute exact path={"/department"} component={Department} />
+              <PublicRoute exact path={"/doctor"} component={Doctor} />
+              <PublicRoute exact path={"/about"} component={About} />
+              <PrivateRoute exact path={"/contact"} component={Contact} />
+              <PrivateRoute exact path={"/appoitment"} component={Appoitment} />
+              <PrivateRoute exact path={"/listappoitment"} component={Listappoitment} />
+              <PublicRoute exact path={"/medicine"} component={Medicine} />
+              <PublicRoute exact path={"/counter"} component={Counter} />
+              <PublicRoute restricted={true} exact path={"/login"} component={Login} />
+            </Switch>
+          </Provider>
+        </ProviderTheme>
+        <Footer />
+      </SnackbarProvider>
     </>
   );
 }
