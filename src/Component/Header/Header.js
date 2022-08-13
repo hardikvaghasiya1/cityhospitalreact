@@ -2,7 +2,8 @@ import React, { useContext } from 'react';
 import { NavLink } from 'react-router-dom';
 import ThemeContexts from '../../Context/ThemeContext';
 import Alert from '../AlertComp/Alert';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { logoutaction } from '../../redux/Action/auth.action';
 
 
 function Header(props) {    
@@ -12,6 +13,12 @@ function Header(props) {
     const authuser = useSelector(state => state.signup)
     console.log(authuser)
 
+    const dispatch = useDispatch()
+
+    const handleLogout = () => {
+        console.log("handlelogout")
+        dispatch(logoutaction())
+    } 
 
 
     return (
@@ -55,7 +62,13 @@ function Header(props) {
                         <i className="bi bi-list mobile-nav-toggle" />
                     </nav>
                     <NavLink to={'/appoitment'} className="appointment-btn scrollto"><span className="d-none d-md-inline">Make an</span>Appointment</NavLink>
-                    <NavLink to={'/login'}  className="appointment-btn scrollto"><span className="d-none d-md-inline">Login/ Signup</span></NavLink>
+
+                    {
+                        authuser.user === null ?
+                        <NavLink to={'/login'}  className="appointment-btn scrollto"><span className="d-none d-md-inline">Login/ Signup</span></NavLink>
+                        :
+                        <NavLink to={'/login'} onClick={handleLogout} className="appointment-btn scrollto"><span className="d-none d-md-inline">Logout</span></NavLink>
+                    }
                     <Alert/>
                 </div>
             </header>

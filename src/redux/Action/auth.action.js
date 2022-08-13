@@ -14,6 +14,14 @@ export const signneduser = (data) => (dispatch) => {
     dispatch({type:ActionTypes.SIGNNED_USER, payload:data})
 }
 
+export const logoutaction = () => (dispatch) => {
+    dispatch({type: ActionTypes.LOGOUT_USER})
+}
+
+export const loggedoutaction = () => (dispatch) => {
+    dispatch({type: ActionTypes.LOGGEDOUT_USER})
+}
+
 export const emailverification = (data) => (dispatch) => {
     dispatch({type:ActionTypes.EMAIL_VERIFIYE, payload:data})
 }   
