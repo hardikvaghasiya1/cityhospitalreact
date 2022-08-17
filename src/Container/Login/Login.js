@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import * as yup from 'yup';
 import { Form, Formik, useFormik } from 'formik';
-import { loginAction, signupaction } from '../../redux/Action/auth.action';
+import { forgotpassword, googleloginAction, loginAction, signupaction } from '../../redux/Action/auth.action';
 import { useDispatch } from 'react-redux';
+import GoogleIcon from '@mui/icons-material/Google';
 
 function Login(props) {
 
@@ -44,6 +45,10 @@ function Login(props) {
         }
     }
 
+    const signinwithgoogle = () => {
+        dispatch(googleloginAction())
+    }
+
     const formik = useFormik({
         initialValues: initial,
         validationSchema: schema,
@@ -51,18 +56,19 @@ function Login(props) {
             if (UseType === 'Login') {
                 console.log('Login Successfully');
                 // sessionStorage.setItem("user", '12345');
-                dispatch(loginAction(values))
+                dispatch(loginAction(values));
             }
-            else if (UseType === 'Signup'){
+            else if (UseType === 'Signup') {
                 console.log('Signup Successfully');
                 dispatch(signupaction(values));
                 formik.resetForm();
             }
             else if (UseType === 'ForgotPassword') {
-                console.log('Forgot Password Sucessfully');
+                console.log("popopop")
+                dispatch(forgotpassword(values));
             }
         },
-        
+
     });
     return (
         <main>
@@ -70,34 +76,32 @@ function Login(props) {
                 <div className="container">
                     <div className="section-title">
                         {
-                            UseType === 'ForgetPassowrd' ? <h3 className='text-center'>Forgot Password</h3> :
+                            UseType === 'ForgotPassword' ? <h3 className='text-center'>Forgot Password</h3> :
                                 UseType === "Login" ?
                                     <div><h2>Login</h2></div> :
                                     <div><h2>Signup</h2></div>
                         }
-                        <p>Aenean enim orci, suscipit vitae sodales ac, semper in ex. Nunc aliquam eget nibh eu euismod. Donec dapibus
-                            blandit quam volutpat sollicitudin. Fusce tincidunt sit amet ex in volutpat. Donec lacinia finibus tortor.
-                            Curabitur luctus eleifend odio. Phasellus placerat mi et suscipit pulvinar.</p>
                     </div>
                     <Formik value={formik}>
                         <Form onSubmit={formik.handleSubmit}>
                             {
-                                UseType === 'ForgetPassword' ? (
-                                    <div className="col-md-4 form-group mt-3 mt-md-0">
-                                        {/* <h2 className="fw-bold text-danger">Forgot Your Password</h2>  */}
-                                        <input type="email" className="form-control" name="email" placeholder="Your Email" onChange={formik.handleChange} />
-                                        {formik.errors.email ? <p className="text-danger small">{formik.errors.email}</p> : null}
-                                    </div>
+                                UseType === 'ForgotPassword' ? (
+                                    <>
+                                        <div className="col-md-4 form-group mt-3 mt-md-0">
+                                            <input type="email" className="form-control" name="email" placeholder="Your Email" onChange={formik.handleChange} />
+                                            {formik.errors.email ? <p className="text-danger small">{formik.errors.email}</p> : null}
+                                        </div>
+                                        <div className='text-center'>
+                                            <button type='submit' className="appointment-btn scrollto m-0"
+                                                onClick={() => setUseType("ForgotPassword")}>Verify Email</button>
+                                        </div>
+                                    </>
                                 ) : null
                             }
 
                             {
                                 UseType === 'Signup' ? (
                                     <div>
-                                        {/* <div className="col-md-4 form-group">
-                                            <input type="name" className="form-control" name="name" placeholder="Your Name" onChange={formik.handleChange} />
-                                            {formik.errors.name ? <p className="text-danger small">{formik.errors.name}</p> : null}
-                                        </div> */}
                                         <div className="col-md-4 form-group mt-4">
                                             <input type="email" className="form-control" name="email" placeholder="Your Email" onChange={formik.handleChange} />
                                             {formik.errors.email ? <p className="text-danger small">{formik.errors.email}</p> : null}
@@ -128,33 +132,57 @@ function Login(props) {
 
                             {
                                 UseType === "Login" ? (
-                                    <div>
-                                        <div className="text-center">
-                                            <button
-                                                type="submit"
-                                                className=""
-                                                onClick={() => { setUseType("Login"); }}>
-                                                Login </button></div>
-                                        <p className="mt-3 cursor-pointer" onClick={() => setUseType("ForgetPassowrd")}
-                                            style={{ cursor: "pointer" }}>Forgot Password</p>
-
-                                        <button
-                                            type="submit"
-                                            className="mt-4"
-                                            onClick={() => { setUseType("Signup"); }} >
-                                            Sign Up </button>
-                                    </div>)
-                                    :
-                                    (
-                                        <div>
-                                            <h6 className="fw-bold my-4" style={{ cursor: "pointer" }}>Already Have An Account ?</h6>
-                                            <button type='submit' className="appointment-btn scrollto m-0">
-                                                {
-                                                    UseType === 'ForgetPassowrd' ? "Send OTp" : "Sign Up"
-                                                }   </button>
-                                            <button type='submit' className="appointment-btn scrollto m-0"
-                                                onClick={() => setUseType("Login")}>Login</button>
+                                    <>
+                                        <div className="d-flex mt-3">
+                                            <div>
+                                                <button
+                                                    type="submit"
+                                                    className="appointment-btn m-0"
+                                                    onClick={() => { setUseType("Login"); }}>
+                                                    Login
+                                                </button>
+                                            </div>
+                                            <div>
+                                                <button
+                                                    type="submit"
+                                                    className="appointment-btn"
+                                                    onClick={() => { setUseType("Signup") }} >
+                                                    Sign Up
+                                                </button>
+                                            </div>
                                         </div>
+                                        <div>
+                                            <p
+                                                className="cursor-pointer mt-2"
+                                                onClick={() => setUseType("ForgotPassword")}
+                                                style={{ cursor: "pointer" }}>
+                                                Forgot Password ?
+                                            </p>
+                                        </div>
+                                    </>
+                                ) : (
+                                        <>
+                                            <div className='d-flex'>
+                                                <button
+                                                    type="submit"
+                                                    className="appointment-btn mt-4"
+                                                    onClick={() => { setUseType("Signup") }} >
+                                                    Sign Up
+                                                </button>
+                                                <button
+                                                    type='submit'
+                                                    className="appointment-btn mt-4"
+                                                    onClick={() => setUseType("Login")}>
+                                                    Login
+                                                </button>
+                                            </div>
+                                            <p
+                                                className="my-4"
+                                                style={{ cursor: "pointer" }}
+                                                    onClick={() => { signinwithgoogle() }}>
+                                                <GoogleIcon className='me-2' />Signin with Google
+                                            </p>
+                                        </>
                                     )
                             }
 
